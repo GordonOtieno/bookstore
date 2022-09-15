@@ -1,25 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Books from './components/books/Page';
+import Categories from './components/categories/Categories';
+import NavBar from './components/Navbar';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const routes = [
+  {
+    path: '/',
+    domain: 'BOOKS',
+    component: <Books />,
+  },
+  {
+    path: '/categories',
+    domain: 'CATEGORIES',
+    component: <Categories />,
+  },
+];
+
+const App = () => (
+  <Router>
+    <NavBar title="Bookstore" nav={routes} />
+    <Switch>
+      {routes.map(({ path, component }) => (
+        <Route path={path} exact key={path}>{component}</Route>
+      ))}
+    </Switch>
+  </Router>
+);
 
 export default App;
