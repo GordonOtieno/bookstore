@@ -1,8 +1,10 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import Books from './components/books/Page';
 import Categories from './components/categories/Categories';
 import NavBar from './components/Navbar';
+import store from './redux/configureStore';
 
 const routes = [
   {
@@ -18,14 +20,16 @@ const routes = [
 ];
 
 const App = () => (
-  <Router>
-    <NavBar title="Bookstore" nav={routes} />
-    <Switch>
-      {routes.map(({ path, component }) => (
-        <Route path={path} exact key={path}>{component}</Route>
-      ))}
-    </Switch>
-  </Router>
+  <Provider store={store}>
+    <Router>
+      <NavBar title="Bookstore" nav={routes} />
+      <Switch>
+        {routes.map(({ path, component }) => (
+          <Route path={path} exact key={path}>{component}</Route>
+        ))}
+      </Switch>
+    </Router>
+  </Provider>
 );
 
 export default App;
