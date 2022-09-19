@@ -4,7 +4,6 @@ import Books from './BooksContainer';
 
 const BooksPage = () => {
   const books = useSelector((state) => state.book);
-  console.log(books);
   return (
     <div>
       <Books books={books} />
