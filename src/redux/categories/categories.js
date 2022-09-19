@@ -1,30 +1,16 @@
-const CHECK_STATUS = 'bookstore/books/CHECK_STATUS';
-const REMOVE_CATEGORY = 'bookstore/books/REMOVE_CATEGORY';
+const CHECK_STATUS = 'bookstore/categories/CHECK_STATUS';
 
 // add book action mathod
-export const addCategory = (payload) => (
+export const checkStatus = () => (
   {
     type: CHECK_STATUS,
-    payload,
 
-  });
-
-export const removeBook = (id) => (
-  {
-    type: REMOVE_CATEGORY,
-    id,
   });
 
 const categoryReducer = (state = [], action) => {
   switch (action.type) {
     case CHECK_STATUS:
-      return [
-        ...state,
-        ...action.payload,
-      ];
-
-    case REMOVE_CATEGORY:
-      return state.filter((_, index) => index !== action.id);
+      return 'Under construction';
     default:
       return state;
   }
