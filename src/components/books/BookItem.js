@@ -4,7 +4,7 @@ import ActionButtons from './ActionButtons';
 
 const Book = ({ book }) => {
   const {
-    id, category, title, author, progress,
+    item_id: id, category, title, author, progress,
   } = book;
   return (
     <>
@@ -25,7 +25,7 @@ Book.propTypes = {
   book: PropTypes.shape({
     category: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
+    item_id: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
     progress: BookProgress.propTypes.progress,
   }).isRequired,
