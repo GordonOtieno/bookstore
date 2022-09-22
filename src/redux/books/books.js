@@ -21,7 +21,7 @@ const books = [
     title: 'The River Between',
     author: 'Ngugi Wa Thiongo',
     progress: {
-      currentChapter: 'Chapter 3: "A Lesson Learned"',
+      currentChapter: 'Chapter 3: "What a Nice Day"',
       completed: '16',
     },
   },
