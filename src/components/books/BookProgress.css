@@ -1,0 +1,35 @@
+.progress-section {
+  display: flex;
+  align-items: center;
+}
+
+.progress-divider {
+  width: 0.125rem;
+  height: 4.375rem;
+  margin: 0 3.688rem 0 4.938rem;
+  background-color: #e8e8e8;
+}
+
+.current-chapter {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 14rem;
+}
+
+.update-progress-btn {
+  padding: 8px 0;
+  display: inline;
+  background-color: #4386bf;
+  border: none;
+  color: white;
+}
+
+.percent-convered {
+  display: flex;
+  align-items: center;
+}
+
+.current-chapter-text {
+  color: rgb(153, 170, 182);
+}

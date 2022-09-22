@@ -1,23 +1,25 @@
 import PropTypes from 'prop-types';
 import BookProgress from './BookProgress';
 import ActionButtons from './ActionButtons';
+import './BookItem.css';
 
 const Book = ({ book }) => {
   const {
     item_id: id, category, title, author, progress,
   } = book;
   return (
-    <>
-      <div>
-        <div>
+    <div className="book-card">
+      <div className="book-content">
+        <div className="book-info">
           <h5>{category}</h5>
           <h3>{title}</h3>
-          <h6>{author}</h6>
+          <h5 className="author">{author}</h5>
+          <ActionButtons id={id} />
         </div>
         <BookProgress progress={progress} />
       </div>
-      <ActionButtons id={id} />
-    </>
+
+    </div>
   );
 };
 

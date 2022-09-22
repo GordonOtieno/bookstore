@@ -21,14 +21,16 @@ const routes = [
 
 const App = () => (
   <Provider store={store}>
-    <Router>
-      <NavBar title="Bookstore" nav={routes} />
-      <Switch>
-        {routes.map(({ path, component }) => (
-          <Route path={path} exact key={path}>{component}</Route>
-        ))}
-      </Switch>
-    </Router>
+    <div className="main-container">
+      <Router>
+        <NavBar title="Bookstore CMS" nav={routes} />
+        <Switch>
+          {routes.map(({ path, component }) => (
+            <Route path={path} exact key={path}>{component}</Route>
+          ))}
+        </Switch>
+      </Router>
+    </div>
   </Provider>
 );
 

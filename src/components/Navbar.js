@@ -1,16 +1,20 @@
 import PropTypes from 'prop-types';
 import { Link, NavLink } from 'react-router-dom';
+import image from './user.png';
 
 const NavBar = ({ title, nav }) => (
-  <nav>
-    <Link to="/">{title}</Link>
-    <ul>
+  <nav className="navbar">
+    <Link to="/" className="logo">{title}</Link>
+    <ul className="nav-items">
       {nav.map(({ domain, path }) => (
-        <li key={path}>
+        <li key={path} className="nav-link">
           <NavLink exact to={path}>{domain}</NavLink>
         </li>
       ))}
     </ul>
+    <div className="user-logo">
+      <img src={image} alt="userImage" />
+    </div>
   </nav>
 );
 

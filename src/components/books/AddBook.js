@@ -2,6 +2,7 @@ import { nanoid } from 'nanoid';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createBook } from '../../redux/books/books';
+import './AddBook.css';
 
 const categories = ['--select--', 'Play', 'Novel', 'Short Story'];
 
@@ -27,16 +28,17 @@ const AddBook = () => {
   };
 
   return (
-    <section>
+    <section className="addBook-section">
+      <hr />
       <h2>ADD NEW BOOK</h2>
-      <form onSubmit={submitHandler}>
+      <form className="Addbook-form" onSubmit={submitHandler}>
         <input type="text" value={title} placeholder="Book title" required onChange={titleHandler} />
         <select value={category} onChange={categoryHandler}>
           { categories.map((category) => (
             <option key={category} value={category}>{category}</option>
           ))}
         </select>
-        <button type="submit">ADD BOOK</button>
+        <button className="submit" type="submit">ADD BOOK</button>
       </form>
     </section>
   );
