@@ -16,9 +16,9 @@ The Bookstore website is a content management system that allows you to:
 - React.Js
 - CSS
 
-<!-- ## Live Demo
+ ## Live Demo
 
-[Live Demo Link](https://usmansbk.github.io/bookstore) -->
+[Live Demo Link](https://bukstore.netlify.app/)
 
 ## Getting Started
 
